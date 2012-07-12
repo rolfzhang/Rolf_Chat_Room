@@ -5,15 +5,27 @@ This demo is shared in the Shenzhen HTML5 Codejam Salon,
 
 compared the LongPolling method with WebSocket in developing realtime web app.
 
+### MOVE pattern ###
+
+This demo is developed in `MOVE` pattern:
+
+	Models:		plain obj
+	
+	Operations:	handle functions with routes convention
+	
+	Views:		jade template, bootstrap, less
+	
+	Events:		eventProxy and aopFunction modules
+
 ### Installing ###
 
 Install library dependencies:
 
-	`$ npm install express@3.0.0beta3`
+	$ npm install express@3.0.0beta3
 	
-	`$ npm install jade@0.26.3`
+	$ npm install jade@0.26.3
 	
-	`$ npm install underscore@1.3.3`
+	$ npm install underscore@1.3.3
 	
-	`$ npm install ws@0.4.20`
+	$ npm install ws@0.4.20
 	
