@@ -1,0 +1,117 @@
+
+@import "import/mixins";
+
+.fr{                       float: right;}
+
+.clear{                    clear: both;
+                            line-height: 0;
+                            height: 0;
+}
+
+.container{               margin-top: 5px;}
+
+.main{                     margin-left: 50px;}
+
+.msgInputBox{             position: relative;
+    
+    .msgInput{             .size(80px, 490px);
+                            .font(14px, 20px);
+    }
+    .msgSend{              margin-top: 10px;
+
+        a, small{          display: block;
+                            margin-bottom: 10px;}
+    }
+    .alert{                position: absolute;
+                            font-size: 14px;
+                            line-height: 30px;
+                            display: none;
+                            top: 40px;
+                            left: 80px;
+                            width: 300px;}
+}
+
+.peopleOnlineWraper{            height: 540px;
+                            overflow: auto;
+                            margin-left: 20px;
+                            
+    &.span2{               width:178px;}
+
+    &.well{                padding: 0;}
+    
+    iframe{                .size(99%,100%);
+                            border: 0;}
+}
+
+ul.peopleOnline{          padding: 19px;
+                             
+    li{                     padding: 3px 0;
+                            line-height: 20px;
+        
+        span{               display: block;
+                            float: left;
+                            background: lightgray;
+                            .square(20px);
+                            margin-right:5px;}
+    }
+    
+    li.me span{           background: lightblue;}
+}
+.loginPanel {             
+    &.modal,
+    &.modal.fade.in{      top: 500px;}
+    
+    .modal-footer{        text-align: center;
+                            position: relative;}
+                            
+    .alert{                top: -12px;
+                            left: 50%;
+                            margin-left: -150px;
+                            width: 250px;
+                            z-index: 2000;
+                            position: absolute;
+                            display: none;
+                            font-size: 14px;
+                            line-height: 30px;}
+}
+.msgShowWraper{           height: 340px;
+                            width: 100%;
+                            overflow: auto;
+                            background: white;
+                            border: 1px solid lightgray;
+}
+
+.msgShow{              padding: 5px 10px 30px;}
+
+.msg{
+    &.msgSystem{           color: gray;
+                            text-align: center;}
+    
+    .msgInfo{              color: gray;
+                            padding: 5px 2px 0;
+                            float: left;}
+    
+    .msgDecorate{          .square(0);
+                            float: left;
+                            border-width: 5px;
+                            border-color: lightgreen lightgreen transparent transparent;
+                            border-style: solid solid dashed dashed;}
+                             
+    .msgContent{           float: left;
+                            background: lightgreen;
+                            .border-radius(0 5px 5px 5px);
+                            padding: 8px 16px;
+                            max-width:300px;}
+    
+    &.myMsg{
+        .msgInfo,
+        .msgDecorate,
+        .msgContent{       float: right;}
+    
+        .msgDecorate{      border-color: lightblue transparent transparent lightblue;
+                             border-style: solid dashed dashed solid;}
+    
+        .msgContent{        background: lightblue;
+                             .border-radius(5px 0 5px 5px);}
+    }
+}

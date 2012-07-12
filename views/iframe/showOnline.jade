@@ -1,0 +1,19 @@
+!!!
+html
+    head
+        title showOnline
+        link(rel='stylesheet', href='/css/style.css')
+        link(rel='stylesheet', href='/bootstrap/css/bootstrap.min.css')
+        style
+            html,body{background:transparent}
+    body
+        ul.peopleOnline.unstyled
+            li.me 
+                span
+                =nickname
+
+            each people in online
+                - if (people != nickname) 
+                    li
+                        span
+                        =people

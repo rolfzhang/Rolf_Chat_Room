@@ -1,0 +1,50 @@
+extends ../layout
+
+block content
+    input#nickname(type='hidden',value=nickname)
+    form#postForm(method='post', style='display:none')
+
+    .container
+        .row.main
+            .span10.well
+                ul.nav.nav-pills.fr
+                    - var items = ['ajax', 'poll', 'socket']
+                    each item in items
+                        li
+                            a(href='/#{item}')= item
+
+                    li.active
+                        a(href='/iframe') iframe
+                h2= title
+
+            .span8
+                //消息窗口
+                .well
+                    iframe#msgShowWraper.msgShowWraper
+
+                //输入窗口
+                .well.msgInputBox
+                    .fr.msgSend
+                        a#msgSendBtn.btn.btn-primary.btn-large(href='javascript') 发送
+                        small (Ctrl+Enter)
+
+                    textarea#msgInput.msgInput
+                    #msgInputAlert.alert.alert-info
+
+            //在线用户列表
+            .span2.well.peopleOnlineWraper
+                iframe#onlineList
+
+        //登陆面板
+        #loginPanel.loginPanel.modal.fade
+            .modal-header
+                h3 登陆面板
+
+            .modal-footer
+                #loginAlert.alert.alert-info
+                .input-append.control-group
+                    input#nicknameInput.span4(type='text', placeholder='输入您的昵称')
+                    button#loginBtn.btn.btn-primary(type='button') 开始聊天
+
+block script
+    script(src='js/iframeClient.js')

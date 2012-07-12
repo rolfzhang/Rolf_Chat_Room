@@ -1,0 +1,23 @@
+!!!
+html
+    head
+        title showMsg
+        link(rel='stylesheet', href='/css/style.css')
+        link(rel='stylesheet', href='/bootstrap/css/bootstrap.min.css')
+    body
+        .msgShow
+            each msg in messages
+                - if (msg.user != nickname) 
+                    .msg 
+                        .msgInfo #{msg.user} (#{msg.time}):
+                        br.clear
+                        .msgDecorate
+                        .msgContent #{msg.content}
+                        br.clear
+                - else
+                    .msg.myMsg
+                        .msgInfo #{msg.user} (#{msg.time}):
+                        br.clear
+                        .msgDecorate
+                        .msgContent #{msg.content}
+                        br.clear
